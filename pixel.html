@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #pixelCanvas {
+            border: 1px solid #000;
+        }
+    </style>
+    <title>Pixel Art - Girl</title>
+</head>
+<body>
+    <canvas id="pixelCanvas" width="160" height="160"></canvas>
+    <script>
+        const canvas = document.getElementById('pixelCanvas');
+        const ctx = canvas.getContext('2d');
+        const pixelSize = 10;
+
+        // Function to draw a pixel at specified position
+        function drawPixel(x, y, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
+        }
+
+        // Draw the initial grid
+        for (let i = 0; i < canvas.width / pixelSize; i++) {
+            for (let j = 0; j < canvas.height / pixelSize; j++) {
+                drawPixel(i, j, '#fff'); // Initially, set all pixels to white
+            }
+        }
+
+        // Function to draw the pixel art girl
+        function drawPixelArtGirl() {
+            // Draw girl's body
+            drawPixel(4, 9, '#ffb6c1');
+            drawPixel(5, 9, '#ffb6c1');
+            drawPixel(6, 9, '#ffb6c1');
+            drawPixel(5, 10, '#ffb6c1');
+            drawPixel(6, 10, '#ffb6c1');
+            drawPixel(5, 11, '#ffb6c1');
+
+            // Draw girl's face
+            drawPixel(5, 8, '#f0d7c1');
+            drawPixel(6, 8, '#f0d7c1');
+            drawPixel(5, 7, '#f0d7c1');
+            drawPixel(6, 7, '#f0d7c1');
+
+            // Draw girl's hair
+            drawPixel(-5, 6, '#000000');
+            drawPixel(6, 6, '#000000');
+            drawPixel(5, 5, '#000000');
+            drawPixel(6, 5, '#000000');
+            drawPixel(5, 4, '#000000');
+            drawPixel(6, 4, '#000000');
+        }
+
+        // Call the function to draw the pixel art girl
+        drawPixelArtGirl();
+    </script>
+</body>
+</html>
